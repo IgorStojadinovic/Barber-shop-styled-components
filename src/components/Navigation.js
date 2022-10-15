@@ -3,10 +3,29 @@ import { Header,Container,Logo,LinksContainer,UserIcons,StyledLink,UserIcon,Cart
 import LogoImg from "../images/Home page/Logo/logo-dark.svg";
 import Account from "../images/Icons/user.png";
 import ShoppingCart from "../images/Icons/shopping-cart.png";
-const Navigation = () => {
+import { useState } from 'react';
 
-  return (
-    <Header>
+const Navigation = () => {
+  const [navbar,setNavbar] = useState(false);
+
+
+  const changeBackground = () =>{
+    if(window.scrollY >= 100){
+      setNavbar(true);
+      console.log(navbar);
+      console.log(window.scrollY);
+    }else{
+      setNavbar(false);
+      console.log(navbar);
+    }
+  }
+
+  window.addEventListener('scroll',changeBackground)
+
+  
+  return( 
+
+    <Header className={navbar ? 'active' : 'transparent'}>
       <Container>
          <LogoContainer>
            <Logo src={LogoImg}/>
@@ -46,7 +65,8 @@ const Navigation = () => {
      </Container>
     </Header>
     
-  )
+  ) 
+
 }
 
 export default Navigation

@@ -4,10 +4,28 @@ import { Link } from "react-router-dom";
 export const Header = styled.header`
 z-index: 10;
 height: 100px;
-width: 65%;
+width: 100%;
 display: flex;
 justify-content: center;
-background-color: transparent;
+transition: background-color 0.3s ease-in-out;
+position: fixed;
+
+&.active {
+  background-color: white;
+}
+
+&.transparent {
+  background-color: transparent;
+}
+`
+
+export const HeaderColor = styled.header`
+z-index: 10;
+height: 100px;
+width: 100%;
+display: flex;
+justify-content: center;
+background-color: White;
 position: fixed;
 `
 
@@ -15,7 +33,7 @@ export const Container = styled.div`
 display: flex;
 justify-content:space-between; 
 height:100px;
-width: 100%;
+width: 65%;
 
 `;
 

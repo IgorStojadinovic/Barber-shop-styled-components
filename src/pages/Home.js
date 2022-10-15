@@ -14,6 +14,9 @@ ServicesSubheading,
 ServicesTextContainer,
 ButtonDark } from '../styles/HomePage/HomePageStyles'
 import HeadingImage  from "../images/Home page/home-hero-image-721x1024.webp"
+
+
+
 const Home = () => {
   return (
     <>
